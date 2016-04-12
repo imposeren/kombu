@@ -298,7 +298,7 @@ class Channel(virtual.Channel):
             return self.table.get_exchanges()
         return super(Channel, self).get_exchanges()
 
-    def _delete(self, queue, *args):
+    def _delete(self, queue, *args, **kwargs):
         """delete queue by name."""
         if self.supports_fanout:
             self.table.queue_delete(queue)
